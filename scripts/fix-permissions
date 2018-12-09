@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Cause volumes mount as root :(
+docker-compose exec wordpress bash -c "chown www-data:www-data wp-content wp-content/plugins wp-uploads"
