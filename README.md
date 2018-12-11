@@ -16,7 +16,7 @@ Comment out any unused plugins in _docker-compose.override.yml_.
 
 Then `docker-compose up` to start. Go to [http://wordpress.local](http://wordpress.local) to view.
 
-### Scripts
+## Scripts
 
 ### Bootstrapping
 
