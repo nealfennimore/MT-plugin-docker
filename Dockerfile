@@ -4,9 +4,6 @@ ARG WORDPRESS_VERSION
 
 FROM wordpress:${WORDPRESS_VERSION}-php${PHP_VERSION}-apache
 
-RUN apt update \
-    && apt install git
-
 WORKDIR /var/www/html
 
 ENV NVM_DIR /usr/local/nvm
