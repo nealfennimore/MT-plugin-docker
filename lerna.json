@@ -1,0 +1,14 @@
+{
+  "packages": [
+    "wp-content/plugins/*"
+  ],
+  "version": "independent",
+  "command": {
+    "bootstrap": {
+      "npmClientArgs": ["--no-optional"]
+    },
+    "build": {
+      "npmClientArgs": ["--production", "--no-optional"]
+    }
+  }
+}

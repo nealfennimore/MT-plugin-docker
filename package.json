@@ -1,0 +1,30 @@
+{
+  "name": "wordpressdocker",
+  "version": "1.0.0",
+  "description": "Run these commands in repo:",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --quiet --parser=babel-eslint 'wp-content/plugins/**/src/modules/**/*.js'",
+    "lint:fix": "npm run lint -- --fix",
+    "bootstrap": "npx lerna bootstrap",
+    "build": "npx lerna run build",
+    "dev": "npx lerna run --parallel dev",
+    "analyze": "npx lerna run --parallel analyze"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nealfennimore/MT-plugin-docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nealfennimore/MT-plugin-docker/issues"
+  },
+  "homepage": "https://github.com/nealfennimore/MT-plugin-docker#readme",
+  "dependencies": {
+    "lerna": "^3.6.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
+}

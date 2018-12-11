@@ -1,5 +1,13 @@
 version: '3.3'
 services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./docker/nginx/vhost.d:/etc/nginx/vhost.d:ro
+
   db:
     image: mysql:${MYSQL_VERSION}
     volumes:
@@ -14,18 +22,30 @@ services:
       MYSQL_PASSWORD: wordpress
 
   wordpress:
+    build:
+      context: .
+      args: 
+        - WORDPRESS_VERSION
+        - PHP_VERSION
+        - NODE_VERSION
     depends_on:
       - db
+    expose:
+      - "80"
     image: wordpress:${WORDPRESS_VERSION}-php${PHP_VERSION}-apache
-    ports:
-      - "8080:80"
     restart: unless-stopped
+    volumes:
+      - ./lerna.json:/var/www/html/lerna.json
+      - ./package.json:/var/www/html/package.json
+      - ./nvmrc:/var/www/html/.nvmrc
     environment:
+      VIRTUAL_HOST: ${WORDPRESS_VIRTUAL_HOST}
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_CACHE', false);
+        define('SCRIPT_DEBUG', true);
 
 volumes:
   db_data:
