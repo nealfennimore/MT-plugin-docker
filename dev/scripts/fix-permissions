@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+# Cause volumes mount as root :(
+$SCRIPTDIR/../docker/exec.sh bash -c "chown www-data:www-data wp-content wp-content/plugins wp-uploads"
