@@ -17,6 +17,13 @@ cp .env.sample .env
 
 Update the .env `PLUGINS_DIR` variable with the directory your plugins are located locally.
 
+
+Now copy over the `docker-compose.override.yml.sample` and edit to whichever plugins you have locally.
+
+```sh
+cp docker-compose.override.yml.sample docker-compose.override.yml
+```
+
 After booting up your square-one docker, use the `dev/docker/start.sh` in order to start everything up.
 
 You should now be able to access [plugins.tribe](https://plugins.tribe).

@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  wordpress:
+    volumes:
+      - ${PLUGINS_DIR}/the-events-calendar:/var/www/html/wp-content/plugins/the-events-calendar
+      - ${PLUGINS_DIR}/events-calendar-pro:/var/www/html/wp-content/plugins/events-calendar-pro
+      - ${PLUGINS_DIR}/event-tickets:/var/www/html/wp-content/plugins/event-tickets
+      - ${PLUGINS_DIR}/event-tickets-plus:/var/www/html/wp-content/plugins/event-tickets-plus
+      - ${PLUGINS_DIR}/the-events-calendar-community-events:/var/www/html/wp-content/plugins/the-events-calendar-community-events
+      - ${PLUGINS_DIR}/the-events-calendar-community-events-tickets:/var/www/html/wp-content/plugins/the-events-calendar-community-events-tickets
