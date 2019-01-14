@@ -27,3 +27,5 @@ cp docker-compose.override.yml.sample docker-compose.override.yml
 After booting up your square-one docker, use the `dev/docker/start.sh` in order to start everything up.
 
 You should now be able to access [plugins.tribe](https://plugins.tribe).
+
+You can start on the [development](development.md) instructions.
