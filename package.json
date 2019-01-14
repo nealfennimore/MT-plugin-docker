@@ -4,12 +4,10 @@
   "description": "Run these commands in repo:",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --quiet --parser=babel-eslint 'wp-content/plugins/**/src/modules/**/*.js'",
-    "lint:fix": "npm run lint -- --fix",
     "bootstrap": "npx lerna bootstrap",
     "build": "npx lerna run build",
     "dev": "npx lerna run --parallel dev",
-    "analyze": "npx lerna run --parallel analyze"
+    "test": "npx lerna run --parallel test"
   },
   "repository": {
     "type": "git",

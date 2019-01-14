@@ -1,6 +1,7 @@
 {
   "packages": [
-    "wp-content/plugins/*"
+    "wp-content/plugins/*",
+    "wp-content/plugins/the-events-calendar/common"
   ],
   "version": "independent",
   "command": {

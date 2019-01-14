@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+$SCRIPTDIR/../docker/exec.sh bash -c "npx lerna exec --concurrency 1 -- npm run test"
