@@ -6,6 +6,9 @@ FROM wordpress:${WORDPRESS_VERSION}-php${PHP_VERSION}-apache
 
 WORKDIR /var/www/html
 
+RUN apt-get update
+RUN apt-get install -y git
+
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 8.9.4
 
